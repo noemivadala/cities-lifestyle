@@ -1,0 +1,1 @@
+export let card = 'file card.js';
