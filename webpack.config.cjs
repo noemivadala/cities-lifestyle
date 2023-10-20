@@ -38,5 +38,6 @@ module.exports = {
         port: 5000,
         open: true,
         static: path.resolve(__dirname, 'dist')
-    }
+    },
+    mode: "production"
 }

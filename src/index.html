@@ -3,10 +3,89 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Cities lifestyle</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Belanosima:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 </head>
 <body>
-    <h1>prova html</h1>
-    <p>webpack</p>
-</body>
+    <div class="section-search">
+      <label id="title">Search for the city</label>
+      <div id="search" class="relative mt-2 rounded-md shadow-sm">
+        <input
+          id="valueLabel"
+          type="text"
+          name="text"
+          class="block w-full rounded-md border-0 py-1.5 pl-7 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+        />
+        <div class="absolute inset-y-0 right-2 flex items-center">
+          <!--close icon-->
+          <svg
+            id="icon-close"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+            stroke-width="1.5"
+            stroke="currentColor"
+            class="w-6 h-6 close"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              d="M6 18L18 6M6 6l12 12"
+            />
+          </svg>
+          <button id="btn-search" type="button" class="btn btn-primary">
+            <!--search icon-->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke-width="1.5"
+              stroke="currentColor"
+              class="w-5 h-5"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+              />
+            </svg>
+          </button>
+        </div>
+      </div>
+      <p id="textError"></p>
+    </div>
+
+    <div id="containerCard"></div>
+    <div id="containerScore"></div>
+    <div class="car-blu">
+      <img src="img/car/blu-car.png" alt="Macchina blu" />
+    </div>
+    <div class="car-viola">
+      <img src="img/car/purple-car.png" alt="Macchina viola" />
+    </div>
+    <div class="car-rossa">
+      <img src="img/car/red-car.png" alt="Macchina rossa" />
+    </div>
+    <div class="car-gialla">
+      <img src="img/car/yellow-car.png" alt="Macchina gialla" />
+    </div>
+
+    <footer>
+      <p>
+        <a
+          href="https://it.freepik.com/vettori-gratuito/le-automobili-guidano-all-incrocio-della-citta-sul-vettore-di-paesaggio-urbano_34477990.htm#query=city&position=41&from_view=search&track=sph"
+          >Immagine di upklyak</a
+        >
+        su Freepik
+      </p>
+    </footer>
+  </body>
 </html>
