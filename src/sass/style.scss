@@ -5,7 +5,7 @@
 }
 
 body {
-    background-image: url(/img/background.webp);
+    background-image: url(../img/background.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -41,11 +41,11 @@ body {
 
 #icon-close:hover {
     cursor: pointer;
-
-    .close {
-        display: none;
-    }
 } 
+
+.close {
+    display: none;
+}
 
 #containerCard {
     max-width: 1000px;
@@ -92,7 +92,7 @@ body {
     font-weight: 600;
 }
 
-.car-blu, .car-viola, .car-rossa, .car-gialla {
+.blue-car, .purple-car, .red-car, .yellow-car {
     position: absolute;
     bottom: 2vh;
 }

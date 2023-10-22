@@ -18,12 +18,16 @@ module.exports = {
             use: ['style-loader','css-loader', 'sass-loader']
         },
         {
+            test: /\.(svg|png|jpe?g|gif)$/i,
+            type: 'asset/resource'
+        },
+        {
             test: /\.js$/i,
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
                 options: {
-                    presets: ['@babel/preset-env'],
+                    presets: ['@babel/preset-env']
                 }
             },
         }
@@ -39,5 +43,10 @@ module.exports = {
         open: true,
         static: path.resolve(__dirname, 'dist')
     },
-    mode: "production"
+    performance: {
+        hints: false,
+        maxEntrypointSize: 512000,
+        maxAssetSize: 512000
+    },
+    mode: "development"
 }
