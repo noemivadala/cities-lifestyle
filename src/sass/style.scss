@@ -13,7 +13,7 @@ body {
     overflow: hidden;
 }
 
-.section-search {
+#sectionSearch {
     max-width: 400px;
     margin: 80px auto 40px;
 
@@ -27,6 +27,17 @@ body {
 
     #search {
         margin: 14px 20px;
+    }
+
+    #containerListCity {
+        background-color: #ffffff96;
+        border-radius: 10px;
+        margin: 0 18px;
+        padding: 20px 30px;
+
+        p {
+            margin-bottom: 6px;
+        }
     }
 }
 
