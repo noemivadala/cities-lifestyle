@@ -66,8 +66,10 @@ searchValue.onkeyup = function() {
 }
 
 function previewCity(result) {
+  containerListCity.style.display = "block"; 
   const content = result.map((city) => {
     const listItem = document.createElement('li');
+    listItem.classList.add("list-item");
     listItem.textContent = city.name;
     console.log(city);
     listItem.addEventListener('click', () => selectInput(city));
@@ -85,6 +87,7 @@ function selectInput(city) {
   searchValue.value = city.name;
   containerListCity.innerHTML = '';
   getData(searchValue.value);
+  containerListCity.style.display = "none"; 
 }
 
 

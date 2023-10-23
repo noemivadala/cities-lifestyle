@@ -21,6 +21,7 @@ function clearField() {
     iconClose.classList.add("close");
     searchValue.classList.remove('error');
     textError.style.display = 'none';
+    containerListCity.style.display = "none"; 
 }
 
 function findCity() {

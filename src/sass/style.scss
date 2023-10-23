@@ -11,6 +11,7 @@ body {
     background-attachment: fixed;
     background-position: center;
     overflow: hidden;
+    font-family: 'Belanosima', sans-serif;
 }
 
 #sectionSearch {
@@ -33,10 +34,20 @@ body {
         background-color: #ffffff96;
         border-radius: 10px;
         margin: 0 18px;
-        padding: 20px 30px;
+        padding: 20px;
 
-        p {
-            margin-bottom: 6px;
+        .list-item {
+            background-color: trasparent;
+            margin-bottom: 10px;
+            max-height: 30px;
+            padding: 5px 10px;
+            cursor: pointer;
+            transition: 0.3s;
+
+            &:hover {
+                background-color: #9acdf4;
+                border-radius: 4px;
+            }
         }
     }
 }
