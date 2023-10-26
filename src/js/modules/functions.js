@@ -22,6 +22,7 @@ function clearField() {
     searchValue.classList.remove('error');
     textError.style.display = 'none';
     containerListCity.style.display = "none"; 
+    containerCard.classList.remove("display");
 }
 
 function findCity() {

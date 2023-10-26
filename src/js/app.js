@@ -57,17 +57,18 @@ searchValue.onkeyup = function() {
   if(input.length){
     result = cities.filter((city) => {
       if (city.name && typeof city.name === 'string') {
-        return city.name.toLowerCase().includes(input);
+        return city.name.toLowerCase().startsWith(input);
       }
       return false;
     });
   }
+  containerCard.classList.remove("display");
   previewCity(result);
 }
 
 function previewCity(result) {
   containerListCity.style.display = "block"; 
-  const content = result.map((city) => {
+  const content = result.slice(0, 4).map((city) => {
     const listItem = document.createElement('li');
     listItem.classList.add("list-item");
     listItem.textContent = city.name;
