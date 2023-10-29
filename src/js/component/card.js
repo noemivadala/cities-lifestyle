@@ -33,10 +33,4 @@ const cardCity = function (data) {
       containerScore.append(el);
     })
   
-  
-  gsap.from('#containerCard', 1, {
-    opacity: 0,
-    height: 0,
-    ease: "power3.inOut",
-  })
 };

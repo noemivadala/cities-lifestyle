@@ -1,5 +1,5 @@
 import { getData } from "../app.js";
-import { searchValue, iconClose, textError } from "./variables.js";
+import { searchValue, containerListCity, iconClose, textError } from "./variables.js";
 export { clearField, findCity, findCityEnter, createElement, createImage };
 
 function createElement(tag, id, classe) {
@@ -21,8 +21,10 @@ function clearField() {
     iconClose.classList.add("close");
     searchValue.classList.remove('error');
     textError.style.display = 'none';
-    containerListCity.style.display = "none"; 
-    containerCard.classList.remove("display");
+    containerListCity.classList.remove('display');
+    containerListCity.classList.add('no-display');
+    containerCard.classList.remove('display');
+    containerCard.style.display = 'none';
 }
 
 function findCity() {
@@ -32,7 +34,11 @@ function findCity() {
 }
 
 function findCityEnter(e) {
+
     if(e.key == "Enter") {
+        containerCard.classList.remove('no-display');
+        containerListCity.classList.add('no-display');
         getData();
+        console.log('ho premuto invio');
     }
 }

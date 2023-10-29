@@ -1,12 +1,11 @@
 import '../sass/style.scss';
 import axios from 'axios';
 var _ = require('lodash');
-import { sectionSearch, containerCard, search, searchLabel, searchValue, textError, iconClose } from "./modules/variables.js";
-import { clearField, findCity, findCityEnter, createElement } from "./modules/functions.js";
+import { containerCard, searchBtn, searchValue, textError, iconClose } from "./modules/variables.js";
+import { clearField, findCity, findCityEnter} from "./modules/functions.js";
+import { previewCity} from "./modules/autocomplete.js";
 import { cardCity } from "./component/card.js";
 
-let containerListCity = createElement('div', 'containerListCity', 'list-city');
-sectionSearch.appendChild(containerListCity);
 
 let urlCity = "https://api.teleport.org/api/urban_areas/slug:";
 let urlListCities = "https://api.teleport.org/api/urban_areas/";
@@ -14,6 +13,9 @@ let urlListCities = "https://api.teleport.org/api/urban_areas/";
 //call
 async function getData(searchTerm) {
   searchTerm = searchValue.value.toLowerCase().replace(' ', '-');
+  containerListCity.classList.remove('display');
+  containerListCity.classList.add('no-display');
+
   axios
     .get(urlCity + searchTerm + "/scores/")
     .then((response) => {
@@ -28,6 +30,7 @@ async function getData(searchTerm) {
         textError.style.display = 'block';
         textError.innerText = `City not found`;
         containerCard.classList.remove("display");
+        containerListCity.classList.add('no-display');
       }
       console.log("Error: ", error.response.status);
       console.log(urlCity + searchTerm + "/scores/");
@@ -52,48 +55,35 @@ async function getListCity() {
 
 searchValue.onkeyup = function() {
   let result = [];
-  let input = searchValue.value;
+  let input = searchValue.value.toLowerCase();
+
   console.log(input);
   if(input.length){
     result = cities.filter((city) => {
       if (city.name && typeof city.name === 'string') {
-        return city.name.toLowerCase().startsWith(input);
+        return city.name.toLowerCase().startsWith(input.toLowerCase());
       }
       return false;
     });
+    
+    searchValue.classList.remove('error');
+    textError.style.display = 'none';
+    containerListCity.classList.remove("no-display");
+    containerCard.classList.remove("display");
+    containerCard.classList.add("no-display");
+    iconClose.classList.remove("no-display");
+  } else if(input.trim() === '' ) {
+
+    containerListCity.classList.add("no-display");
+    containerCard.classList.add("no-display");
+    iconClose.classList.add("no-display");
+    console.log("stringa vuota");
   }
-  containerCard.classList.remove("display");
   previewCity(result);
 }
 
-function previewCity(result) {
-  containerListCity.style.display = "block"; 
-  const content = result.slice(0, 4).map((city) => {
-    const listItem = document.createElement('li');
-    listItem.classList.add("list-item");
-    listItem.textContent = city.name;
-    console.log(city);
-    listItem.addEventListener('click', () => selectInput(city));
-    return listItem;
-  });
-
-  const ul = document.createElement('ul');
-  ul.append(...content);
-
-  containerListCity.innerHTML = '';
-  containerListCity.appendChild(ul);
-}
-
-function selectInput(city) {
-  searchValue.value = city.name;
-  containerListCity.innerHTML = '';
-  getData(searchValue.value);
-  containerListCity.style.display = "none"; 
-}
-
-
 //event button
-search.addEventListener('click', getData);
+searchBtn.addEventListener('click', getData);
 iconClose.addEventListener('click', clearField);
 searchValue.addEventListener('keyup', findCity);
 searchValue.addEventListener('keydown', findCityEnter);

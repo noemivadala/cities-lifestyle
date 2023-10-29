@@ -1,7 +1,4 @@
-import { BluCarDiv, BluCarImg, containerCars } from "../component/cars.js";
-import { PurpleCarDiv, PurpleCarImg } from "../component/cars.js";
-import { RedCarDiv, RedCarImg } from "../component/cars.js";
-import { YellowCarDiv, YellowCarImg } from "../component/cars.js";
+import { BluCarImg, PurpleCarImg, RedCarImg, YellowCarImg } from "../component/cars.js";
 
 //title - search
 gsap.from('#title', 1, {
@@ -14,7 +11,7 @@ gsap.from('#title', 1, {
     }
   })
   
-  gsap.from('#search', 1, {
+  gsap.from('#searchLabel', 1, {
     y: 60,
     opacity: 0,
     ease: "power3.out",
@@ -24,7 +21,7 @@ gsap.from('#title', 1, {
     }
 })
 
-//car
+//cars
 const tl = gsap.timeline( { repeat: -1 } );
 tl.fromTo(
   BluCarImg, 
