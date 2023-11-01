@@ -25,18 +25,18 @@ gsap.from('#title', 1, {
 const tl = gsap.timeline( { repeat: -1 } );
 tl.fromTo(
   BluCarImg, 
-  { x: "300vh" }, { x: "-180vh", duration: 8 });
+  { x: "-100%" }, { x: "-180vh", duration: 8 });
 tl.fromTo(
   PurpleCarImg,
-  { x: "-50vh" },{ x: "300vh", duration: 10, ease:"none"}, "<"
+  { x: "-50vh" },{ x: "300vh", duration: 10, ease:"none"}, 
 );
 tl.fromTo(
   RedCarImg,
-  { x: "-150vh" },{ x: "300vh", duration: 12, ease:"none", delay: 4}, "<"
+  { x: "-150vh" },{ x: "300vh", duration: 12, ease:"none", delay: 4},
 )
 tl.fromTo(
   YellowCarImg,
-  { x: "-150vh" },{ x: "300vh", duration: 14, ease:"none", delay: 6}, "<"
+  { x: "-150vh" },{ x: "300vh", duration: 14, ease:"none", delay: 6},
 )
 
 //media query
@@ -45,7 +45,7 @@ mm.add("(max-width: 800px)", () => {
 
   tl.fromTo(
     BluCarImg, 
-    { y: "200vh" }, { y: "-160vh", duration: 8 });
+    { y: "200vh" }, { y: "-160vh", opacity: 0, duration: 8 }, ">");
 
 ;
 });
