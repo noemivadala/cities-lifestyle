@@ -9,7 +9,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[contenthash].js',
+        filename: 'js/[name].[contenthash].js',
         clean: true,
     },
     module: { rules: [
@@ -18,11 +18,12 @@ module.exports = {
             use: ['style-loader','css-loader', 'sass-loader']
         },
         {
-            test: /\.(svg|png|jpe?g|gif)$/i,
-            type: 'asset/resource'
+            test: /\.(svg|png|jpe?g|gif|webp)$/i,
+            type: 'asset/resource',
         },
         {
             test: /\.js$/i,
+            include: path.resolve(__dirname, 'src'),
             exclude: /node_modules/,
             use: {
                 loader: 'babel-loader',
