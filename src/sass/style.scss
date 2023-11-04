@@ -10,7 +10,6 @@ body {
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
-    overflow: hidden;
     font-family: 'Belanosima', sans-serif;
 }
 
@@ -101,6 +100,11 @@ body {
 
 #continerCars {
     overflow: hidden;
+
+    #bluCar, #purpleCar, #redCar, #yellowCar {
+        overflow: hidden;
+        width: 100%;
+    }
 }
 
 .display {

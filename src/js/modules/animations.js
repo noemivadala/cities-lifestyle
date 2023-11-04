@@ -25,7 +25,7 @@ gsap.from('#title', 1, {
 const tl = gsap.timeline( { repeat: -1 } );
 tl.fromTo(
   BluCarImg, 
-  { x: "-100%" }, { x: "-180vh", duration: 8 });
+  { x: "-100%" }, { x: "-180vh", duration: 8 }, ">");
 tl.fromTo(
   PurpleCarImg,
   { x: "-50vh" },{ x: "300vh", duration: 10, ease:"none"}, 
