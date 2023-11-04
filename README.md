@@ -19,7 +19,7 @@
 ## API
 [Teleport Cities](https://developers.teleport.org/api/)
 
-![cities-lifestyle-search](https://github.com/noemivadala/cities-lifestyle/assets/18146517/02749454-9491-426d-83af-4c133d90b76a)
+![cities-lifestyle](https://github.com/noemivadala/cities-lifestyle/assets/18146517/42f54910-bd5e-44ce-85fc-2439eea4e470)
 
 ## Clone repository
 
@@ -46,7 +46,7 @@ npm run dev
 ```
 ## 🌐 Try it!
 
-<p>Link: </p>
+<p>Link: https://citieslifestyle.netlify.app/</p>
 
 <p>
   <img alt="Version" src="https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000" />
